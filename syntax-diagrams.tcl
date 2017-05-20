@@ -271,11 +271,8 @@ lappend non_terminals derivedOrSubrangeTypePIM {
 
 # (10.1b) Derived Type or Subrange Type (Ext)
 lappend non_terminals derivedOrSubrangeType {
-  or
-    typeIdent
-    {line range {optx OF typeIdent}}
+  line {optx range  OF} typeIdent
 }
-
 
 # (10.2) Type Identifier
 lappend non_terminals typeIdent {
