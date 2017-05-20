@@ -1,6 +1,6 @@
 #!/usr/bin/wish
 #
-# Syntax diagram generator for M2C, M2Sharp and M2J, status May 17, 2017
+# Syntax diagram generator for M2C, M2Sharp and M2J, status May 21, 2017
 #
 # This script is derived from the SQLite project's bubble-generator script.
 # It is quite possibly the only such tool that can wrap-around diagrams so
@@ -262,12 +262,20 @@ lappend non_terminals type {
   }
 }
 
-# (10.1) Derived Type or Subrange Type
-lappend non_terminals derivedOrSubrangeType {
+# (10.1a) Derived Type or Subrange Type (PIM)
+lappend non_terminals derivedOrSubrangeTypePIM {
   or
     {line typeIdent {optx range}}
     range
 }
+
+# (10.1b) Derived Type or Subrange Type (Ext)
+lappend non_terminals derivedOrSubrangeType {
+  or
+    typeIdent
+    {line range {optx OF typeIdent}}
+}
+
 
 # (10.2) Type Identifier
 lappend non_terminals typeIdent {
