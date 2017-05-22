@@ -826,7 +826,7 @@ lappend res_words AND {
   line AND
 }
 
-# (1.2) ARGLIST
+# (1.2) ARGLIST (Ext only)
 lappend res_words ARGLIST {
   line ARGLIST
 }
@@ -891,7 +891,7 @@ lappend res_words EXIT {
   line EXIT
 }
 
-# (1.15) EXPORT
+# (1.15) EXPORT (PIM only)
 lappend res_words EXPORT {
   line EXPORT
 }
@@ -901,7 +901,7 @@ lappend res_words FOR {
   line FOR
 }
 
-# (1.17) FROM
+# (1.17) FROM (PIM only)
 lappend res_words FROM {
   line FROM
 }
@@ -951,77 +951,82 @@ lappend res_words OF {
   line OF
 }
 
-# (1.27) OR
+# (1.27) OPAQUE (Ext only)
+lappend res_words OPAQUE {
+  line OPAQUE
+}
+
+# (1.28) OR
 lappend res_words OR {
   line OR
 }
 
-# (1.28) POINTER
+# (1.29) POINTER
 lappend res_words POINTER {
   line POINTER
 }
 
-# (1.29) PROCEDURE
+# (1.30) PROCEDURE
 lappend res_words PROCEDURE {
   line PROCEDURE
 }
 
-# (1.30) QUALIFIED
+# (1.31) QUALIFIED (PIM only)
 lappend res_words QUALIFIED {
   line QUALIFIED
 }
 
-# (1.31) RECORD
+# (1.32) RECORD
 lappend res_words RECORD {
   line RECORD
 }
 
-# (1.32) REPEAT
+# (1.33) REPEAT
 lappend res_words REPEAT {
   line REPEAT
 }
 
-# (1.33) RETURN
+# (1.34) RETURN
 lappend res_words RETURN {
   line RETURN
 }
 
-# (1.34) SET
+# (1.35) SET
 lappend res_words SET {
   line SET
 }
 
-# (1.35) THEN
+# (1.36) THEN
 lappend res_words THEN {
   line THEN
 }
 
-# (1.36) TO
+# (1.37) TO
 lappend res_words TO {
   line TO
 }
 
-# (1.37) TYPE
+# (1.38) TYPE
 lappend res_words TYPE {
   line TYPE
 }
 
-# (1.38) UNTIL
+# (1.39) UNTIL
 lappend res_words UNTIL {
   line UNTIL
 }
 
-# (1.39) VAR
+# (1.40) VAR
 lappend res_words VAR {
   line VAR
 }
 
-# (1.40) WHILE
+# (1.41) WHILE
 lappend res_words WHILE {
   line WHILE
 }
 
-# (1.41) WITH
+# (1.42) WITH (PIM only)
 lappend res_words WITH {
   line WITH
 }
@@ -1082,150 +1087,204 @@ lappend res_symbols Minus {
   line -
 }
 
-# (2.11) Asterisk
+# (2.11) Double Plus (Ext only)
+lappend res_symbols DoublePlus {
+  line ++
+}
+
+# (2.12) Double Minus (Ext only)
+lappend res_symbols DoubleMinus {
+  line --
+}
+
+# (2.13) Asterisk
 lappend res_symbols Asterisk {
   line *
 }
 
-# (2.12) Slash
-lappend res_symbols Slash {
+# (2.14) Solidus
+lappend res_symbols Solidus {
   line /
 }
 
-# (2.13) Backslash
+# (2.15) Backslash (Ext only)
 lappend res_symbols Backslash {
   line BACKSLASH
 }
 
-# (2.14) Equal
+# (2.16) Equal
 lappend res_symbols Equal {
   line =
 }
 
-# (2.15) Not Equal
+# (2.17) Not Equal
 lappend res_symbols NotEqual {
   line #
 }
 
-# (2.16) Greater Than
-lappend res_symbols GreaterThan {
-  line >
-}
-
-# (2.17) Greater Or Equal
-lappend res_symbols GreaterOrEqual {
-  line >=
-}
-
-# (2.18) Less Than
-lappend res_symbols LessThan {
-  line <
-}
-
-# (2.19) Less Or Equal
-lappend res_symbols LessOrEqual {
-  line <=
-}
-
-# (2.20) Diamond
+# (2.18) Diamond (PIM only)
 lappend res_symbols Diamond {
   line <>
 }
 
-# (2.21) Left Parenthesis
+# (2.19) Greater Than
+lappend res_symbols GreaterThan {
+  line >
+}
+
+# (2.20) Greater Or Equal
+lappend res_symbols GreaterOrEqual {
+  line >=
+}
+
+# (2.21) Less Than
+lappend res_symbols LessThan {
+  line <
+}
+
+# (2.22) Less Or Equal
+lappend res_symbols LessOrEqual {
+  line <=
+}
+
+# (2.23) Tilde (PIM only)
+lappend res_symbols Tilde {
+  line ~
+}
+
+# (2.24) Ampersand (PIM only)
+lappend res_symbols Ampersand {
+  line &
+}
+
+# (2.25) Left Parenthesis
 lappend res_symbols LeftParen {
   line (
 }
 
-# (2.22) Right Parenthesis
+# (2.26) Right Parenthesis
 lappend res_symbols RightParen {
   line )
 }
 
-# (2.23) Left Bracket
+# (2.27) Left Bracket
 lappend res_symbols LeftBracket {
   line [
 }
 
-# (2.24) Right Bracket
+# (2.28) Right Bracket
 lappend res_symbols RightBracket {
   line ]
 }
 
-# (2.25) Left Brace
+# (2.29) Left Brace
 lappend res_symbols LeftBrace {
   line LBRACE
 }
 
-# (2.26) Right Brace
-lappend res_symbols RightBrace {
-  line RBRACE
-}
-
-# (2.27) Open Pragma 1
-lappend res_symbols OpenPragma1 {
-  line (*$
-}
-
-# (2.28) Close Pragma 1
-lappend res_symbols ClosePragma1 {
-  line *)
-}
-
-# (2.29) Open Pragma 2
-lappend res_symbols OpenPragma2 {
-  line <*
-}
-
-# (2.30) Close Pragma 2
-lappend res_symbols ClosePragma2 {
-  line *>
-}
-
-# (2.31) Single Quote
+# (2.30) Single Quote
 lappend res_symbols SingleQuote {
   line SINGLE_QUOTE
 }
 
-# (2.32) Double Quote
+# (2.31) Double Quote
 lappend res_symbols DoubleQuote {
   line DOUBLE_QUOTE
 }
 
-# (2.33) Exclamation
+# (2.32) Right Brace
+lappend res_symbols RightBrace {
+  line RBRACE
+}
+
+# (2.33a) Open Pragma (PIM)
+lappend res_symbols OpenPragma1 {
+  line (*$
+}
+
+# (2.33b) Open Pragma (Ext)
+lappend res_symbols OpenPragma2 {
+  line <*
+}
+
+# (2.34a) Close Pragma (PIM)
+lappend res_symbols ClosePragma1 {
+  line *)
+}
+
+# (2.34b) Close Pragma (Ext)
+lappend res_symbols ClosePragma2 {
+  line *>
+}
+
+# (2.35) Exclamation (Ext only)
 lappend res_symbols Exclamation {
   line !
 }
 
-# (2.34) Open Comment
+# (2.36) Open Comment
 lappend res_symbols OpenComment {
   line (*
 }
 
-# (2.35) Close Comment
+# (2.37) Close Comment
 lappend res_symbols CloseComment {
   line *)
 }
 
 
-# ----------------------------
-# (3) Identifier
-# ----------------------------
+# ---------------
+# (3) Identifiers
+# ---------------
 
-# (3) Identifier
+# (3a) Identifier (default)
 lappend terminals Ident {
+  line M2Ident
+}
+
+# (3b) Identifier (with option --lowline-identifier)
+lappend terminals IdentOPT {
+  line ForeignIdent
+}
+
+# (3.1) Modula-2 Identifier
+lappend terminals M2Ident {
   line Letter {loop nil LetterOrDigit}
 }
 
-# (3.1) Letter Or Digit
+# (3.2) Letter Or Digit
 lappend terminals LetterOrDigit {
   or Letter Digit
 }
 
+# (3.3) ForeignIdent
+# foreignIdent :=
+#   Letter LetterOrDigit* ( '_' LetterOrDigit+ )*
+#   ;
+lappend terminals ForeignIdent {
+  line Letter {optx AlphaNumSeq} {optx {loop {line _ AlphaNumSeq} nil}}
+}
 
-# ------------------
-# (6) Number Literal
-# ------------------
+# (3.4) Alpha-Numeric Sequence
+lappend terminals AlphaNumSeq {
+  loop LetterOrDigit nil
+}
+
+
+# -------------------
+# (4) Number Literals
+# -------------------
+
+# (4a) Number Literal (PIM)
+lappend terminals NumberLiteralPIM {
+  or
+    DecimalNumberTail
+    {line Base8DigitSeq B}
+    {line Base8DigitSeq C}
+    {line Base16DigitSeq H}
+}
+
+# (4b) Number Literal (Ext)
 lappend terminals NumberLiteral {
   or
     {line 0 {
@@ -1239,118 +1298,107 @@ lappend terminals NumberLiteral {
     {line 1..9 {optx DecimalNumberTail}}
 }
 
-# (6.1) Decimal Number Tail
+# (4.1) Decimal Number Tail
 lappend terminals DecimalNumberTail {
-  or
-   {line {optx SINGLE_QUOTE} DigitSeq {optx RealNumberTail}}
-   RealNumberTail
+  line {loop Digit nil} {optx RealNumberTail}
 }
 
-# Digit Separator
-# lappend terminals DigitSep {
-#   line SINGLE_QUOTE
-# }
-
-# (6.2) Real Number Tail
+# (4.2) Real Number Tail
 lappend terminals RealNumberTail {
-  line . DigitSeq {optx e {or + - nil} DigitSeq }
+  line . {loop Digit nil} {optx E {or + - nil} {loop Digit nil}}
 }
 
-# (6.3) Digit Sequence
-lappend terminals DigitSeq {
-  loop DigitGroup SINGLE_QUOTE
-}
-
-# (6.3b) Digit Group
-lappend terminals DigitGroup {
-  loop Digit nil
-}
-
-# (6.4) Base-16 Digit Sequence
-lappend terminals Base16DigitSeq {
-  loop Base16DigitGroup SINGLE_QUOTE
-}
-
-# (6.4b) Base-16 Digit Group
-lappend terminals Base16DigitGroup {
-  loop Base16Digit nil
-}
-
-# (6.5) Base-2 Digit Sequence
+# (4.3) Base-2 Digit Sequence
 lappend terminals Base2DigitSeq {
-  loop Base2DigitGroup SINGLE_QUOTE
-}
-
-# (6.5b) Base-2 Digit Group
-lappend terminals Base2DigitGroup {
   loop Base2Digit nil
 }
 
-# (6.6) Digit
+# (4.4) Base-8 Digit Sequence
+lappend terminals Base8DigitSeq {
+  loop Base8Digit nil
+}
+
+# (4.5) Base-16 Digit Sequence
+lappend terminals Base16DigitSeq {
+  loop Base16Digit nil
+}
+
+# (4.6) Digit
 lappend terminals Digit {
   or Base2Digit 2 3 4 5 6 7 8 9
 }
 
-# (6.7) Base-16 Digit
-lappend terminals Base16Digit {
-  or Digit A B C D E F
-}
-
-# (6.8) Base-2 Digit
+# (4.7) Base-2 Digit
 lappend terminals Base2Digit {
   or 0 1
 }
 
+# (4.8) Base-8 Digit
+lappend terminals Base8Digit {
+  or Base2Digit 2 3 4 5 6 7
+}
+
+# (4.9) Base-16 Digit
+lappend terminals Base16Digit {
+  or Digit A B C D E F
+}
+
+
 # ------------------
-# (7) String Literal
+# (5) String Literal
 # ------------------
 lappend terminals StringLiteral {
   or SingleQuotedString DoubleQuotedString
 }
 
-# (7.1) Single Quoted String
+# (5.1) Single Quoted String
 lappend terminals SingleQuotedString {
   line SINGLE_QUOTE
     {optx {loop {or QuotableCharacter DOUBLE_QUOTE} nil}}
   SINGLE_QUOTE
 }
 
-# (7.2) Double Quoted String
+# (5.2) Double Quoted String
 lappend terminals DoubleQuotedString {
   line DOUBLE_QUOTE
     {optx {loop {or QuotableCharacter SINGLE_QUOTE} nil}}
   DOUBLE_QUOTE
 }
 
-# (7.3) Quotable Character
+# (5.3a) Quotable Character (PIM)
+lappend terminals QuotableCharacterPIM {
+  or Digit Letter Space NonAlphaNumQuotable BACKSLASH
+}
+
+# (5.3b) Quotable Character (Ext)
 lappend terminals QuotableCharacter {
   or Digit Letter Space NonAlphaNumQuotable EscapedCharacter
 }
 
-# (7.4) Letter
+# (5.4) Letter
 lappend terminals Letter {
   or A..Z a..z 
 }
 
-# (7.5) Space
+# (5.5) Space
 # CONST Space = CHR(32);
 
-# (7.6a) Non-Alphanumeric Quotable Character
+# (5.6a) Non-Alphanumeric Quotable Character
 lappend terminals NonAlphaNumQuotable1 {
   or ! # $ % & ( ) * + ,
 }
 
-# (7.6b) Non-Alphanumeric Quotable Character
+# (5.6b) Non-Alphanumeric Quotable Character
 lappend terminals NonAlphaNumQuotable2 {
   or - . / : ; < = > ? @
 }
 
-# (7.6c) Non-Alphanumeric Quotable Character
+# (5.6c) Non-Alphanumeric Quotable Character
 lappend terminals NonAlphaNumQuotable3 {
   or [ ] ^ _ ` LBRACE | RBRACE ~
 }
 
-# (7.7) Escaped Character
+# (5.7) Escaped Character (Ext only)
 lappend terminals EscapedCharacter {
   line BACKSLASH {or n t BACKSLASH}
 }
@@ -1370,7 +1418,7 @@ lappend ignore_symbols Whitespace {
 # (1.1) ASCII_TAB
 # CONST ASCII_TAB = CHR(8);
 
-# (2) Line Comment
+# (2) Line Comment (Ext only)
 lappend ignore_symbols LineComment {
   line ! {optx {loop CommentCharacter nil}} EndOfLine
 }
@@ -1411,6 +1459,13 @@ set pragmas {}
 # (1) Pragma
 lappend pragmas pragma {
   line <* pragmaBody *>
+}
+
+# (1.1) Pragma Body
+lappend pragmas pragmaBody {
+  or
+    ffiPragma
+    ffidentPragma
 }
 
 ## (1.1) Pragma Body
@@ -1576,16 +1631,26 @@ lappend pragmas pragma {
 #lappend pragmas memMappingPragma {
 #  line ADDR = inPragmaExpr
 #}
-#
-## (15) Body Of Foreign Function Interface Pragma
-#lappend pragmas ffiPragma {
-#  line FFI = {or `C `Fortran `CLR `JVM }
-#}
-#
-## (16) Body Of Foreign Function Identifier Mapping Pragma
-#lappend pragmas ffidentPragma {
-#  line FFIDENT = StringLiteral
-#}
+
+# (15a) Body Of Foreign Function Interface Pragma (M2C)
+lappend pragmas ffiPragmaM2C {
+  line FFI = `C
+}
+
+# (15b) Body Of Foreign Function Interface Pragma (M2J)
+lappend pragmas ffiPragmaM2J {
+  line FFI = `JVM
+}
+
+# (15c) Body Of Foreign Function Interface Pragma (M2Sharp)
+lappend pragmas ffiPragmaM2Sharp {
+  line FFI = `CLR
+}
+
+# (16) Body Of Foreign Function Identifier Mapping Pragma
+lappend pragmas ffidentPragma {
+  line FFIDENT = StringLiteral
+}
 #
 ## (17) Body of Implementation Defined Pragma
 #lappend pragmas implDefinedPragma {
@@ -1823,7 +1888,7 @@ lappend legend legendNonTerminal {
 #
 set bn 0
 set b .bb.b$bn
-wm title .bb "M2Sharp"
+wm title .bb "M2"
 
 # Menu: All Diagrams
 #
